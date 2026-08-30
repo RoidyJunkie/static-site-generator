@@ -35,7 +35,7 @@ def generate_page(from_path, template_path, dest_path, basepath):
     if not os.path.exists(os.path.dirname(dest_path)):
         os.makedirs(os.path.dirname(dest_path))
     full_html = temp_html.replace("{{ Title }}", title).replace("{{ Content }}", from_html)
-    full_html.replace('href="/', f'href="{basepath}').replace('src="/', f'src="{basepath}')
+    full_html= full_html.replace('href="/', f'href="{basepath}').replace('src="/', f'src="{basepath}')
     with open(dest_path, "w") as file:
         file.write(full_html)
         file.close()
